@@ -6,7 +6,7 @@ One method for using Lograge and LogDNA together is to simply use our [ruby logg
 
 To illustrate this, we have used the popular sample app [repository](https://github.com/mhartl/sample_app_6th_ed) provided by the [Ruby on Rails Tutorial](https://www.railstutorial.org/) to send logs modified with Lograge to [LogDNA](https://logdna.com) for ingestion.
 
-The process involves a few tiny tweaks to your base app.  First, you add the LogDNA, Lograge and Lograge-SQL gems to your Gemfile.  Next, add the Lograge initializer (found under config/initializers).  And finally, modify your environment configurations (found under config/environments) to include config.logger = Logdna::Ruby.new('PRIVATE_INGESTION_KEY') (as described in the [docs](https://github.com/logdna/ruby)).  Once you have entered your ingestion key and served up your ruby app, you should begin seeing the logs you normall find in /log flowing through the LogDNA app.
+The process involves a few tiny tweaks to your base app.  First, you add the LogDNA, Lograge and Lograge-SQL gems to your Gemfile.  Next, add the Lograge initializer (found under config/initializers) with a JSON formatting type.  And finally, modify your environment configurations (found under config/environments) to include config.logger = Logdna::Ruby.new('PRIVATE_INGESTION_KEY') (as described in the [docs](https://github.com/logdna/ruby)).  Once you have entered your ingestion key and served up your ruby app, you should begin seeing the logs you normall find in /log flowing through the LogDNA app.
 
 Happy logging!
 
